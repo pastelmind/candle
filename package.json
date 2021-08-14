@@ -13,10 +13,14 @@
   "author": "Ye-hyoung Kang",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint && prettier --check ."
+    "lint": "tsc -p jsconfig.json && eslint && prettier --check ."
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "prettier": "^2.3.2"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^7.16.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5",
+    "vue": "^2.6.14"
   }
 }

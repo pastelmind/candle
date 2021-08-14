@@ -4,29 +4,27 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./style.css" />
     <title>KoL Candle Eudora Table</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="module" defer src="./app.js"></script>
   </head>
   <body>
     <noscript>This page requires JavaScript</noscript>
 
-    <label for="kol-class">Class: </label>
-    <select id="kol-class">
-      <option>Seal Clubber</option>
-      <option>Turtle Tamer</option>
-      <option>Sauceror</option>
-      <option>Pastamancer</option>
-      <option>Disco Bandit</option>
-      <option>Accordion Thief</option>
-    </select>
+    <main id="app">
+      <label for="kol-class">Class: </label>
+      <select id="kol-class">
+        <option v-for="kolClass in kolClasses" v-bind:value="kolClass.id">
+          {{ kolClass.name }}
+        </option>
+      </select>
 
-    <label for="kol-path">Path: </label>
-    <select id="kol-path">
-      <option>Unrestricted</option>
-      <option>Casual</option>
-      <option>Quantum Terrarium</option>
-      <option>Bad Moon</option>
-      <option>Grey Goo</option>
-      <option>Avatar of Boris</option>
-    </select>
+      <label for="kol-path">Path: </label>
+      <select id="kol-path">
+        <option v-for="kolPath in kolPaths" v-bind:value="kolPath.id">
+          {{ kolPath.name }}
+        </option>
+      </select>
+    </main>
 
     <table class="table-candle">
       <thead>

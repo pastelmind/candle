@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ES2020",
+    "strict": true,
+    "target": "ESNext",
+    "types": ["vue/types/umd"]
+  }
+}
