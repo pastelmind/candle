@@ -1,0 +1,22 @@
+{
+  "name": "kol-candle",
+  "private": true,
+  "homepage": "https://pastelmind.github.io/candle",
+  "bugs": {
+    "url": "https://github.com/pastelmind/candle/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pastelmind/candle.git"
+  },
+  "license": "MIT",
+  "author": "Ye-hyoung Kang",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint && prettier --check ."
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "^2.3.2"
+  }
+}
