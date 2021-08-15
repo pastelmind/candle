@@ -20,7 +20,7 @@
     </p>
     <p>Spading data is provided by Ascension Speed Society.</p>
     <p>
-      For technical issues, please contact
+      To report technical issues, please contact
       <strong>philmasterplus (#1804931)</strong> in-game.
     </p>
 
@@ -64,15 +64,24 @@
           <tbody>
             <tr v-for="candleData in candlesByDate">
               <td>{{ candleData.day }}</td>
-              <td>{{ candleData.equipment || '?' }}</td>
-              <td>{{ candleData.premium || '?' }}</td>
-              <td>{{ candleData.basic1 || '?' }}</td>
-              <td>{{ candleData.basic2 || '?' }}</td>
+              <td><candle-info :candle="candleData.equipment" /></td>
+              <td><candle-info :candle="candleData.premium" /></td>
+              <td><candle-info :candle="candleData.basic1" /></td>
+              <td><candle-info :candle="candleData.basic2" /></td>
               <td>{{ candleData.seed }}</td>
             </tr>
           </tbody>
         </table>
       </main>
+    </template>
+
+    <template id="candle-info-template">
+      <div v-if="candle" class="candle-info">
+        <div class="candle-info__name">{{ candle.name }}</div>
+        <div class="candle-info__type">{{ candle.type }}</div>
+        <div class="candle-info__effect">{{ effectShortText }}</div>
+      </div>
+      <div v-else class="candle-info" title="unknown--needs spading">?</div>
     </template>
   </body>
 </html>

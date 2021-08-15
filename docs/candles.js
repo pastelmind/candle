@@ -1,20 +1,88 @@
-const EQUIP_EXTRA_WIDE_HEAD_CANDLE = "extra-wide head candle";
-const EQUIP_ABRACANDALABRA = "Abracandalabra";
-const EQUIP_NOVELTY_SPARKLING_CANDLE = "novelty sparkling candle";
-const EQUIP_EXTRA_LARGE_UTILITY_CANDLE = "extra-large utility candle";
-const EQUIP_RUNED_TAPER_CANDLE = "runed taper candle";
+/**
+ * @typedef {object} CandleData
+ * @property {string} name
+ * @property {string} type
+ * @property {string} effect
+ */
 
-const PREMIUM_SALSA_CALIENTE = "Salsa Caliente™ candle";
-const PREMIUM_NAPALM_IN_THE_MORNING = "Napalm In The Morning™ candle";
-const PREMIUM_SCENT_OF_A_HUMAN = "Scent of a Human™ Candle";
-const PREMIUM_SMOLDERING_CLOVER = "Smoldering Clover™ Candle";
-const PREMIUM_THE_BEAST_WITHIN = "The Beast Within™ Candle";
+const EQUIP_EXTRA_WIDE_HEAD_CANDLE = {
+  name: "extra-wide head candle",
+  type: "Off-hand item",
+  effect: "Spell Damage +100%, MP Regen 5-10, Max MP +100%",
+};
 
-const BASIC_RAINBOW_GLITTER_CANDLE = "rainbow glitter candle";
-const BASIC_EAR_CANDLE = "ear candle";
-const BASIC_BANANA_CANDLE = "banana candle";
-const BASIC_NATURAL_MAGICK_CANDLE = "natural magick candle";
-const BASIC_VOTIVE_OF_CONFIDENCE = "votive of confidence";
+const EQUIP_ABRACANDALABRA = {
+  name: "Abracandalabra",
+  type: "Weapon (1-handed club)",
+  effect: "+25% Item Drops, +50 Hot Damage",
+};
+const EQUIP_NOVELTY_SPARKLING_CANDLE = {
+  name: "novelty sparkling candle",
+  type: "Hat",
+  effect: "Weapon Damage +100%, HP Regen 10-20, Max HP +100%",
+};
+const EQUIP_EXTRA_LARGE_UTILITY_CANDLE = {
+  name: "extra-large utility candle",
+  type: "Ranged weapon (1-handed sparkcandle)",
+  effect: "+25% Item Drops, +25 Hot Damage, +25 Hot Spell Damage",
+};
+const EQUIP_RUNED_TAPER_CANDLE = {
+  name: "runed taper candle",
+  type: "Weapon (1-handed wand)",
+  effect: "+25% Item Drops, +50 Hot Spell Damage",
+};
+
+const PREMIUM_SALSA_CALIENTE = {
+  name: "Salsa Caliente™ candle",
+  type: "Potion (40 adv)",
+  effect: "+30% Item Drops",
+};
+const PREMIUM_NAPALM_IN_THE_MORNING = {
+  name: "Napalm In The Morning™ candle",
+  type: "Potion (40 adv)",
+  effect: "+10 Stats per Fight",
+};
+const PREMIUM_SCENT_OF_A_HUMAN = {
+  name: "Scent of a Human™ Candle",
+  type: "Potion (40 adv)",
+  effect: "Add 2 copies of Beast monsters",
+};
+const PREMIUM_SMOLDERING_CLOVER = {
+  name: "Smoldering Clover™ Candle",
+  type: "Potion (40 adv)",
+  effect: "+60% Meat Drops",
+};
+const PREMIUM_THE_BEAST_WITHIN = {
+  name: "The Beast Within™ Candle",
+  type: "Potion (40 adv)",
+  effect: "Add 2 copies of Dude monsters",
+};
+
+const BASIC_RAINBOW_GLITTER_CANDLE = {
+  name: "rainbow glitter candle",
+  type: "Potion (80 adv)",
+  effect: "So-So Resistance to All Elements",
+};
+const BASIC_EAR_CANDLE = {
+  name: "ear candle",
+  type: "Potion (80 adv)",
+  effect: "+100% Combat Initiative",
+};
+const BASIC_BANANA_CANDLE = {
+  name: "banana candle",
+  type: "Potion (80 adv)",
+  effect: "Causes monster attacks to miss often",
+};
+const BASIC_NATURAL_MAGICK_CANDLE = {
+  name: "natural magick candle",
+  type: "Potion (80 adv)",
+  effect: "Skill MP Cost -3",
+};
+const BASIC_VOTIVE_OF_CONFIDENCE = {
+  name: "votive of confidence",
+  type: "Potion (80 adv)",
+  effect: "Muscle/Mysticality/Moxie +50%",
+};
 
 /**
  * @param {number} kolClassId
@@ -29,10 +97,10 @@ export function computeSeed(kolClassId, kolPathId, daycount) {
 
 /**
  * @typedef {object} CandlePackage
- * @property {string} equipment
- * @property {string} premium
- * @property {string} basic1
- * @property {string} basic2
+ * @property {CandleData} equipment
+ * @property {CandleData} premium
+ * @property {CandleData} basic1
+ * @property {CandleData} basic2
  */
 
 /** @type {ReadonlyMap<number, CandlePackage>} */

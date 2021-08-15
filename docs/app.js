@@ -1,10 +1,11 @@
+import { CandleInfo } from "./CandleInfo.js";
 import { CANDLE_SEEDS, computeSeed } from "./candles.js";
 import { KOL_CLASSES } from "./kol-class.js";
 import { getValidClassesForPath, KOL_PATHS } from "./kol-path.js";
 
 // @ts-ignore Allow using Vue as UMD module
 const App = Vue.extend({
-  template: "#app-template",
+  components: { CandleInfo },
   data() {
     return {
       kolPaths: KOL_PATHS,
@@ -64,6 +65,7 @@ const App = Vue.extend({
         : validClassesForPath[0];
     },
   },
+  template: "#app-template",
 });
 
 new App().$mount("#app");

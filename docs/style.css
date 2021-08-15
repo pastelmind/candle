@@ -17,6 +17,27 @@
   background-color: #eee;
 }
 
-.table-candle tr:nth-child(2n) {
+.table-candle tr:nth-child(even) {
   background-color: #ffe;
+}
+
+.candle-info {
+  display: flex;
+  flex-flow: column;
+}
+
+.candle-info > * {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+.candle-info__type {
+  color: #666;
+  font-size: 75%;
+}
+
+.candle-info__effect {
+  color: #009;
+  font-size: 60%;
+  font-weight: 600;
 }
