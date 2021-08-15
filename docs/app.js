@@ -15,7 +15,7 @@ const App = Vue.extend({
   computed: {
     candlesByDate() {
       const candles = [];
-      for (let day = 1; day <= 10; ++day) {
+      for (let day = 1; day <= 30; ++day) {
         const seed = computeSeed(
           this.selectedKolClass,
           this.selectedKolPath,
