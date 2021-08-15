@@ -604,9 +604,15 @@ export const CANDLE_SEEDS = new Map([
       basic2: BASIC_VOTIVE_OF_CONFIDENCE,
     },
   ],
-  // TODO: Find out which is correct
-  // [203, { equipment: EQUIP_RUNED_TAPER_CANDLE, premium: PREMIUM_NAPALM_IN_THE_MORNING, basic1: BASIC_RAINBOW_GLITTER_CANDLE, basic2: BASIC_VOTIVE_OF_CONFIDENCE }],
-  // [203, { equipment: EQUIP_RUNED_TAPER_CANDLE, premium: PREMIUM_SMOLDERING_CLOVER, basic1: BASIC_BANANA_CANDLE, basic2: BASIC_NATURAL_MAGICK_CANDLE }],
+  [
+    203,
+    {
+      equipment: EQUIP_RUNED_TAPER_CANDLE,
+      premium: PREMIUM_NAPALM_IN_THE_MORNING,
+      basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+      basic2: BASIC_VOTIVE_OF_CONFIDENCE,
+    },
+  ],
   [
     204,
     {

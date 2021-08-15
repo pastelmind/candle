@@ -16,3 +16,7 @@
 .table-candle th {
   background-color: #eee;
 }
+
+.table-candle tr:nth-child(2n) {
+  background-color: #ffd;
+}

@@ -10,43 +10,55 @@
   <body>
     <noscript>This page requires JavaScript</noscript>
 
-    <main id="app">
-      <label for="kol-class">Class: </label>
-      <select v-model="selectedKolClass" id="kol-class">
-        <option v-for="kolClass in kolClasses" v-bind:value="kolClass.id">
-          {{ kolClass.name }}
-        </option>
-      </select>
+    <main id="app"></main>
 
-      <label for="kol-path">Path: </label>
-      <select v-model="selectedKolPath" id="kol-path">
-        <option v-for="kolPath in kolPaths" v-bind:value="kolPath.id">
-          {{ kolPath.name }}
-        </option>
-      </select>
+    <template id="app-template">
+      <main>
+        <label for="kol-path">Path: </label>
+        <select
+          id="kol-path"
+          :value="selectedKolPath"
+          @change="handleKolPathChange($event.target.value)"
+        >
+          <option v-for="kolPath in kolPaths" :value="kolPath.id">
+            {{ kolPath.name }}
+          </option>
+        </select>
 
-      <table class="table-candle">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Equipment</th>
-            <th>Premium candle</th>
-            <th>Basic candle 1</th>
-            <th>Basic candle 2</th>
-            <th>Seed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="candleData in candlesByDate">
-            <td>{{ candleData.day }}</td>
-            <td>{{ candleData.equipment || '?' }}</td>
-            <td>{{ candleData.premium || '?' }}</td>
-            <td>{{ candleData.basic1 || '?' }}</td>
-            <td>{{ candleData.basic2 || '?' }}</td>
-            <td>{{ candleData.seed }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+        <label for="kol-class">Class: </label>
+        <select
+          id="kol-class"
+          :value="selectedKolClass"
+          @change="handleKolClassChange($event.target.value)"
+        >
+          <option v-for="kolClass in kolClasses" :value="kolClass.id">
+            {{ kolClass.name }}
+          </option>
+        </select>
+
+        <table class="table-candle">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Equipment</th>
+              <th>Premium candle</th>
+              <th>Basic candle 1</th>
+              <th>Basic candle 2</th>
+              <th>Seed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="candleData in candlesByDate">
+              <td>{{ candleData.day }}</td>
+              <td>{{ candleData.equipment || '?' }}</td>
+              <td>{{ candleData.premium || '?' }}</td>
+              <td>{{ candleData.basic1 || '?' }}</td>
+              <td>{{ candleData.basic2 || '?' }}</td>
+              <td>{{ candleData.seed }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </template>
   </body>
 </html>

@@ -1,23 +1,15 @@
 import { CANDLE_SEEDS, computeSeed } from "./candles.js";
-import { KolClass, KolPath } from "./data.js";
+import { KOL_CLASSES } from "./kol-class.js";
+import { getValidClassesForPath, KOL_PATHS } from "./kol-path.js";
 
-const kolClasses = Object.entries(KolClass).map(([idStr, kolClassInfo]) => ({
-  id: Number(idStr),
-  ...kolClassInfo,
-}));
-
-const kolPaths = Object.entries(KolPath).map(([idStr, kolPathInfo]) => ({
-  id: Number(idStr),
-  ...kolPathInfo,
-}));
-
+// @ts-ignore Allow using Vue as UMD module
 const App = Vue.extend({
+  template: "#app-template",
   data() {
     return {
-      kolClasses,
-      kolPaths,
-      selectedKolClass: kolClasses[0].id,
-      selectedKolPath: kolPaths[0].id,
+      kolPaths: KOL_PATHS,
+      selectedKolClass: KOL_CLASSES[0].id,
+      selectedKolPath: KOL_PATHS[0].id,
     };
   },
   computed: {
@@ -32,6 +24,44 @@ const App = Vue.extend({
         candles.push({ day, seed, ...CANDLE_SEEDS.get(seed) });
       }
       return candles;
+    },
+
+    kolClasses() {
+      const validClassesForPath = getValidClassesForPath(this.selectedKolPath);
+      return KOL_CLASSES.filter((kolClassInfo) =>
+        validClassesForPath.includes(kolClassInfo.id)
+      );
+    },
+  },
+  methods: {
+    /**
+     * @param {string} kolClass
+     */
+    handleKolClassChange(kolClass) {
+      this.updateKolClassAndPath({ kolClass: Number(kolClass) });
+    },
+
+    /**
+     * @param {string} kolPath
+     */
+    handleKolPathChange(kolPath) {
+      this.updateKolClassAndPath({ kolPath: Number(kolPath) });
+    },
+
+    /**
+     * @param {object} opts
+     * @param {number=} opts.kolClass
+     * @param {number=} opts.kolPath
+     */
+    updateKolClassAndPath(opts) {
+      this.selectedKolPath = opts.kolPath ?? this.selectedKolPath;
+
+      // Ensure that only classes available in the new path are selected
+      const nextKolClass = opts.kolClass ?? this.selectedKolClass;
+      const validClassesForPath = getValidClassesForPath(this.selectedKolPath);
+      this.selectedKolClass = validClassesForPath.includes(nextKolClass)
+        ? nextKolClass
+        : validClassesForPath[0];
     },
   },
 });
