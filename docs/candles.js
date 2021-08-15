@@ -43,19 +43,19 @@ const PREMIUM_NAPALM_IN_THE_MORNING = {
   effect: "+10 Stats per Fight",
 };
 const PREMIUM_SCENT_OF_A_HUMAN = {
-  name: "Scent of a Human™ Candle",
+  name: "Scent of a Human™ candle",
   type: "Potion (40 adv)",
-  effect: "Add 2 copies of Beast monsters",
+  effect: "Add 2 copies of Dude monsters",
 };
 const PREMIUM_SMOLDERING_CLOVER = {
-  name: "Smoldering Clover™ Candle",
+  name: "Smoldering Clover™ candle",
   type: "Potion (40 adv)",
   effect: "+60% Meat Drops",
 };
 const PREMIUM_THE_BEAST_WITHIN = {
-  name: "The Beast Within™ Candle",
+  name: "The Beast Within™ candle",
   type: "Potion (40 adv)",
-  effect: "Add 2 copies of Dude monsters",
+  effect: "Add 2 copies of Beast monsters",
 };
 
 const BASIC_RAINBOW_GLITTER_CANDLE = {
@@ -247,6 +247,15 @@ export const CANDLE_SEEDS = new Map([
       premium: PREMIUM_SALSA_CALIENTE,
       basic1: BASIC_EAR_CANDLE,
       basic2: BASIC_VOTIVE_OF_CONFIDENCE,
+    },
+  ],
+  [
+    49,
+    {
+      equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
+      premium: PREMIUM_SALSA_CALIENTE,
+      basic1: BASIC_EAR_CANDLE,
+      basic2: BASIC_NATURAL_MAGICK_CANDLE,
     },
   ],
   [
