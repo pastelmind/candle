@@ -119,11 +119,35 @@ export function computeSeed(kolClassId, kolPathId, daycount) {
 
 /** @type {Record<number, CandlePackage>} */
 const CANDLE_DATA = {
-  21: {
+  20: {
+    equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
+    premium: PREMIUM_NAPALM_IN_THE_MORNING,
+    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+    basic2: BASIC_NATURAL_MAGICK_CANDLE,
+  },
+  23: {
     equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
     premium: PREMIUM_THE_BEAST_WITHIN,
     basic1: BASIC_EAR_CANDLE,
     basic2: BASIC_RAINBOW_GLITTER_CANDLE,
+  },
+  24: {
+    equipment: EQUIP_RUNED_TAPER_CANDLE,
+    premium: PREMIUM_NAPALM_IN_THE_MORNING,
+    basic1: BASIC_VOTIVE_OF_CONFIDENCE,
+    basic2: BASIC_RAINBOW_GLITTER_CANDLE,
+  },
+  25: {
+    equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_VOTIVE_OF_CONFIDENCE,
+    basic2: BASIC_RAINBOW_GLITTER_CANDLE,
+  },
+  26: {
+    equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
+    premium: PREMIUM_THE_BEAST_WITHIN,
+    basic1: BASIC_BANANA_CANDLE,
+    basic2: BASIC_EAR_CANDLE,
   },
   32: {
     equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
@@ -227,11 +251,23 @@ const CANDLE_DATA = {
     basic1: BASIC_VOTIVE_OF_CONFIDENCE,
     basic2: BASIC_NATURAL_MAGICK_CANDLE,
   },
+  59: {
+    equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
+    premium: PREMIUM_NAPALM_IN_THE_MORNING,
+    basic1: BASIC_EAR_CANDLE,
+    basic2: BASIC_VOTIVE_OF_CONFIDENCE,
+  },
   66: {
     equipment: EQUIP_NOVELTY_SPARKLING_CANDLE,
     premium: PREMIUM_THE_BEAST_WITHIN,
     basic1: BASIC_VOTIVE_OF_CONFIDENCE,
     basic2: BASIC_NATURAL_MAGICK_CANDLE,
+  },
+  79: {
+    equipment: EQUIP_NOVELTY_SPARKLING_CANDLE,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+    basic2: BASIC_BANANA_CANDLE,
   },
   82: {
     equipment: EQUIP_RUNED_TAPER_CANDLE,
@@ -251,11 +287,17 @@ const CANDLE_DATA = {
     basic1: BASIC_EAR_CANDLE,
     basic2: BASIC_VOTIVE_OF_CONFIDENCE,
   },
-  103: {
-    equipment: EQUIP_NOVELTY_SPARKLING_CANDLE,
+  105: {
+    equipment: EQUIP_ABRACANDALABRA,
     premium: PREMIUM_SCENT_OF_A_HUMAN,
-    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
-    basic2: BASIC_BANANA_CANDLE,
+    basic1: BASIC_BANANA_CANDLE,
+    basic2: BASIC_VOTIVE_OF_CONFIDENCE,
+  },
+  106: {
+    equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
+    premium: PREMIUM_SMOLDERING_CLOVER,
+    basic1: BASIC_BANANA_CANDLE,
+    basic2: BASIC_RAINBOW_GLITTER_CANDLE,
   },
   108: {
     equipment: EQUIP_NOVELTY_SPARKLING_CANDLE,
@@ -313,6 +355,18 @@ const CANDLE_DATA = {
   },
   121: {
     equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
+    premium: PREMIUM_SMOLDERING_CLOVER,
+    basic1: BASIC_NATURAL_MAGICK_CANDLE,
+    basic2: BASIC_VOTIVE_OF_CONFIDENCE,
+  },
+  122: {
+    equipment: EQUIP_ABRACANDALABRA,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_EAR_CANDLE,
+    basic2: BASIC_NATURAL_MAGICK_CANDLE,
+  },
+  123: {
+    equipment: EQUIP_ABRACANDALABRA,
     premium: PREMIUM_SMOLDERING_CLOVER,
     basic1: BASIC_NATURAL_MAGICK_CANDLE,
     basic2: BASIC_VOTIVE_OF_CONFIDENCE,
@@ -449,6 +503,18 @@ const CANDLE_DATA = {
     basic1: BASIC_BANANA_CANDLE,
     basic2: BASIC_NATURAL_MAGICK_CANDLE,
   },
+  168: {
+    equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_VOTIVE_OF_CONFIDENCE,
+    basic2: BASIC_EAR_CANDLE,
+  },
+  169: {
+    equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
+    premium: PREMIUM_THE_BEAST_WITHIN,
+    basic1: BASIC_BANANA_CANDLE,
+    basic2: BASIC_EAR_CANDLE,
+  },
   171: {
     equipment: EQUIP_EXTRA_LARGE_UTILITY_CANDLE,
     premium: PREMIUM_SMOLDERING_CLOVER,
@@ -473,6 +539,12 @@ const CANDLE_DATA = {
     basic1: BASIC_NATURAL_MAGICK_CANDLE,
     basic2: BASIC_EAR_CANDLE,
   },
+  184: {
+    equipment: EQUIP_ABRACANDALABRA,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+    basic2: BASIC_BANANA_CANDLE,
+  },
   185: {
     equipment: EQUIP_NOVELTY_SPARKLING_CANDLE,
     premium: PREMIUM_SALSA_CALIENTE,
@@ -486,9 +558,9 @@ const CANDLE_DATA = {
     basic2: BASIC_VOTIVE_OF_CONFIDENCE,
   },
   187: {
-    equipment: EQUIP_ABRACANDALABRA,
+    equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
     premium: PREMIUM_SCENT_OF_A_HUMAN,
-    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+    basic1: BASIC_EAR_CANDLE,
     basic2: BASIC_BANANA_CANDLE,
   },
   188: {
@@ -533,6 +605,18 @@ const CANDLE_DATA = {
     basic1: BASIC_NATURAL_MAGICK_CANDLE,
     basic2: BASIC_RAINBOW_GLITTER_CANDLE,
   },
+  225: {
+    equipment: EQUIP_RUNED_TAPER_CANDLE,
+    premium: PREMIUM_SMOLDERING_CLOVER,
+    basic1: BASIC_RAINBOW_GLITTER_CANDLE,
+    basic2: BASIC_BANANA_CANDLE,
+  },
+  226: {
+    equipment: EQUIP_ABRACANDALABRA,
+    premium: PREMIUM_SCENT_OF_A_HUMAN,
+    basic1: BASIC_NATURAL_MAGICK_CANDLE,
+    basic2: BASIC_BANANA_CANDLE,
+  },
   241: {
     equipment: EQUIP_EXTRA_WIDE_HEAD_CANDLE,
     premium: PREMIUM_SCENT_OF_A_HUMAN,
@@ -556,6 +640,12 @@ const CANDLE_DATA = {
     premium: PREMIUM_THE_BEAST_WITHIN,
     basic1: BASIC_NATURAL_MAGICK_CANDLE,
     basic2: BASIC_RAINBOW_GLITTER_CANDLE,
+  },
+  459: {
+    equipment: EQUIP_ABRACANDALABRA,
+    premium: PREMIUM_SALSA_CALIENTE,
+    basic1: BASIC_EAR_CANDLE,
+    basic2: BASIC_NATURAL_MAGICK_CANDLE,
   },
   525: {
     equipment: EQUIP_ABRACANDALABRA,
