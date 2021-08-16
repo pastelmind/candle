@@ -93,7 +93,7 @@ export const KOL_PATHS = Object.freeze([
   { id: 40, name: "Grey Goo" },
   { id: 41, name: "You, Robot" },
   { id: 42, name: "Quantum Terrarium" },
-  { id: 43, name: "(Fall 2021 Path)" },
+  { id: 43, name: "Wildfire" },
 ]);
 
 const kolPathById = new Map(KOL_PATHS.map((path) => [path.id, path]));
