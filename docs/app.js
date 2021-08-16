@@ -1,5 +1,6 @@
 import { CandleInfo } from "./CandleInfo.js";
-import { CANDLE_SEEDS, computeSeed } from "./candles.js";
+import { computeSeed } from "./candles.js";
+import { loadCandleSeedData } from "./data.js";
 import { KOL_CLASSES } from "./kol-class.js";
 import { getValidClassesForPath, KOL_PATHS } from "./kol-path.js";
 
@@ -20,6 +21,7 @@ const App = Vue.extend({
   components: { CandleInfo },
   data() {
     return {
+      candleSeedData: undefined,
       kolPathGroups: KOL_PATH_GROUPS,
       selectedKolClass: KOL_CLASSES[0].id,
       selectedKolPath: KOL_PATHS[0].id,
@@ -27,6 +29,8 @@ const App = Vue.extend({
   },
   computed: {
     candlesByDate() {
+      if (!this.candleSeedData) return [];
+
       const candles = [];
       for (let day = 1; day <= 30; ++day) {
         const seed = computeSeed(
@@ -34,8 +38,9 @@ const App = Vue.extend({
           this.selectedKolPath,
           day
         );
-        candles.push({ day, seed, ...CANDLE_SEEDS.get(seed) });
+        candles.push({ day, seed, ...this.candleSeedData[seed] });
       }
+
       return candles;
     },
 
@@ -45,6 +50,13 @@ const App = Vue.extend({
         validClassesForPath.includes(kolClassInfo.id)
       );
     },
+  },
+  async created() {
+    try {
+      this.candleSeedData = await loadCandleSeedData();
+    } catch (error) {
+      console.error(error);
+    }
   },
   methods: {
     /**
