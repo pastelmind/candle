@@ -8,34 +8,34 @@
 const EQUIP_EXTRA_WIDE_HEAD_CANDLE = {
   name: "extra-wide head candle",
   type: "Off-hand item",
-  effect: "Spell Damage +100%, MP Regen 5-10, Max MP +100%",
+  effect: "Spell Dmg +100%, MP Regen 5-10, MP +100%",
 };
 
 const EQUIP_ABRACANDALABRA = {
   name: "Abracandalabra",
   type: "Weapon (1-handed club)",
-  effect: "+25% Item Drops, +50 Hot Damage",
+  effect: "+25% Items, +50 Hot Dmg",
 };
 const EQUIP_NOVELTY_SPARKLING_CANDLE = {
   name: "novelty sparkling candle",
   type: "Hat",
-  effect: "Weapon Damage +100%, HP Regen 10-20, Max HP +100%",
+  effect: "Wpn Dmg +100%, HP Regen 10-20, HP +100%",
 };
 const EQUIP_EXTRA_LARGE_UTILITY_CANDLE = {
   name: "extra-large utility candle",
   type: "Ranged weapon (1-handed sparkcandle)",
-  effect: "+25% Item Drops, +25 Hot Damage, +25 Hot Spell Damage",
+  effect: "+25% Items, +25 Hot Dmg, +25 Hot Spell Dmg",
 };
 const EQUIP_RUNED_TAPER_CANDLE = {
   name: "runed taper candle",
   type: "Weapon (1-handed wand)",
-  effect: "+25% Item Drops, +50 Hot Spell Damage",
+  effect: "+25% Items, +50 Hot Spell Dmg",
 };
 
 const PREMIUM_SALSA_CALIENTE = {
   name: "Salsa Caliente™ candle",
   type: "Potion (40 adv)",
-  effect: "+30% Item Drops",
+  effect: "+30% Items",
 };
 const PREMIUM_NAPALM_IN_THE_MORNING = {
   name: "Napalm In The Morning™ candle",

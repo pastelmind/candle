@@ -10,11 +10,7 @@ export const CandleInfo = Vue.extend({
   computed: {
     effectShortText() {
       if (!this.candle) return "";
-      return /** @type {CandleData} */ (this.candle).effect
-        .replace(/(D)amage/gi, (_, firstChar) => `${firstChar}mg`)
-        .replace(/Max (HP|MP)/gi, (_, hpText) => hpText)
-        .replace(/Weapon/g, "Wpn")
-        .replace(/Item Drops/gi, "Items");
+      return /** @type {CandleData} */ (this.candle).effect;
     },
   },
   template: "#candle-info-template",
