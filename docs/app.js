@@ -3,12 +3,24 @@ import { CANDLE_SEEDS, computeSeed } from "./candles.js";
 import { KOL_CLASSES } from "./kol-class.js";
 import { getValidClassesForPath, KOL_PATHS } from "./kol-path.js";
 
+/** @typedef {import("./kol-path.js").KolPathInfo} KolPathInfo */
+
+const KOL_PATH_GROUPS = KOL_PATHS.reduce((grouped, kolPathInfo) => {
+  const groupKey = kolPathInfo.year ?? "default";
+  if (grouped[groupKey]) {
+    grouped[groupKey].push(kolPathInfo);
+  } else {
+    grouped[groupKey] = [kolPathInfo];
+  }
+  return grouped;
+}, /** @type {Record<number | 'default', KolPathInfo[]>} */ ({}));
+
 // @ts-ignore Allow using Vue as UMD module
 const App = Vue.extend({
   components: { CandleInfo },
   data() {
     return {
-      kolPaths: KOL_PATHS,
+      kolPathGroups: KOL_PATH_GROUPS,
       selectedKolClass: KOL_CLASSES[0].id,
       selectedKolPath: KOL_PATHS[0].id,
     };

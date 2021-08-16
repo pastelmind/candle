@@ -37,9 +37,21 @@
             :value="selectedKolPath"
             @change="handleKolPathChange($event.target.value)"
           >
-            <option v-for="kolPath in kolPaths" :value="kolPath.id">
+            <option
+              v-for="kolPath in kolPathGroups['default']"
+              :value="kolPath.id"
+            >
               {{ kolPath.name }}
             </option>
+            <optgroup
+              v-for="(kolPathGroup, groupName) in kolPathGroups"
+              v-if="groupName !== 'default'"
+              :label="groupName"
+            >
+              <option v-for="kolPath in kolPathGroup" :value="kolPath.id">
+                {{ kolPath.name }}
+              </option>
+            </optgroup>
           </select>
 
           <label for="kol-class">Class: </label>
