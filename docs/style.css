@@ -108,3 +108,7 @@ body {
     content: "Seed:";
   }
 }
+
+.element-hot {
+  color: #c00;
+}

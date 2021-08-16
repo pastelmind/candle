@@ -83,7 +83,7 @@
       <div v-if="candle" class="candle-info">
         <div class="candle-info__name">{{ candle.name }}</div>
         <div class="candle-info__type">{{ candle.type }}</div>
-        <div class="candle-info__effect">{{ effectShortText }}</div>
+        <div v-html="effectShortHtml" class="candle-info__effect"></div>
       </div>
       <div v-else class="candle-info" title="unknown--needs spading">?</div>
     </template>

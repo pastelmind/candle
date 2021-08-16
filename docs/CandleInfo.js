@@ -8,9 +8,12 @@ export const CandleInfo = Vue.extend({
     },
   },
   computed: {
-    effectShortText() {
+    effectShortHtml() {
       if (!this.candle) return "";
-      return /** @type {CandleData} */ (this.candle).effect;
+      return /** @type {CandleData} */ (this.candle).effect.replace(
+        /Hot(?: Spell)? Dmg/gi,
+        (match) => `<span class="element-hot">${match}</span>`
+      );
     },
   },
   template: "#candle-info-template",
