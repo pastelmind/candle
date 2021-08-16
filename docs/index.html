@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+
     <link rel="stylesheet" href="./style.css" />
     <title>KoL Candle Eudora Table</title>
     <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -10,7 +12,7 @@
   <body>
     <noscript>This page requires JavaScript</noscript>
 
-    <h1>Candle Eudora Table</h1>
+    <h1>KoL Candle Eudora Table</h1>
     <p>
       This page provides daily subscription data for
       <a
@@ -28,27 +30,29 @@
 
     <template id="app-template">
       <main>
-        <label for="kol-path">Path: </label>
-        <select
-          id="kol-path"
-          :value="selectedKolPath"
-          @change="handleKolPathChange($event.target.value)"
-        >
-          <option v-for="kolPath in kolPaths" :value="kolPath.id">
-            {{ kolPath.name }}
-          </option>
-        </select>
+        <section class="kol-inputgroup">
+          <label for="kol-path">Path: </label>
+          <select
+            id="kol-path"
+            :value="selectedKolPath"
+            @change="handleKolPathChange($event.target.value)"
+          >
+            <option v-for="kolPath in kolPaths" :value="kolPath.id">
+              {{ kolPath.name }}
+            </option>
+          </select>
 
-        <label for="kol-class">Class: </label>
-        <select
-          id="kol-class"
-          :value="selectedKolClass"
-          @change="handleKolClassChange($event.target.value)"
-        >
-          <option v-for="kolClass in kolClasses" :value="kolClass.id">
-            {{ kolClass.name }}
-          </option>
-        </select>
+          <label for="kol-class">Class: </label>
+          <select
+            id="kol-class"
+            :value="selectedKolClass"
+            @change="handleKolClassChange($event.target.value)"
+          >
+            <option v-for="kolClass in kolClasses" :value="kolClass.id">
+              {{ kolClass.name }}
+            </option>
+          </select>
+        </section>
 
         <table class="table-candle">
           <thead>

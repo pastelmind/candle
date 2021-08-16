@@ -1,5 +1,20 @@
 body {
-  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.kol-inputgroup {
+  display: grid;
+  gap: 0.5em;
+  grid-auto-flow: column;
+  justify-content: start;
+}
+
+@media (max-width: 480px) {
+  /* Collapse to 2-column form layout on narrow screens */
+  .kol-inputgroup {
+    grid-auto-flow: row;
+    grid-template-columns: auto auto;
+  }
 }
 
 .table-candle {
