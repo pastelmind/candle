@@ -5,80 +5,94 @@
  * @property {string} effect
  */
 
-const EQUIP_EXTRA_WIDE_HEAD_CANDLE = {
-  name: "extra-wide head candle",
-  type: "Off-hand item",
-  effect: "Spell Dmg +100%, MP Regen 5-10, MP +100%",
-};
-
-const EQUIP_ABRACANDALABRA = {
-  name: "Abracandalabra",
+const EQUIP_EXTRA_LARGE_UTILITY_CANDLE = {
+  id: 10779,
+  name: "extra-large utility candle",
   type: "Weapon (1-handed club)",
   effect: "+25% Items, +50 Hot Dmg",
 };
-const EQUIP_NOVELTY_SPARKLING_CANDLE = {
-  name: "novelty sparkling candle",
-  type: "Hat",
-  effect: "Wpn Dmg +100%, HP Regen 10-20, HP +100%",
-};
-const EQUIP_EXTRA_LARGE_UTILITY_CANDLE = {
-  name: "extra-large utility candle",
-  type: "Ranged weapon (1-handed sparkcandle)",
-  effect: "+25% Items, +25 Hot Dmg, +25 Hot Spell Dmg",
-};
 const EQUIP_RUNED_TAPER_CANDLE = {
+  id: 10780,
   name: "runed taper candle",
   type: "Weapon (1-handed wand)",
   effect: "+25% Items, +50 Hot Spell Dmg",
 };
+const EQUIP_NOVELTY_SPARKLING_CANDLE = {
+  id: 10781,
+  name: "novelty sparkling candle",
+  type: "Ranged weapon (1-handed sparkcandle)",
+  effect: "+25% Items, +25 Hot Dmg, +25 Hot Spell Dmg",
+};
+const EQUIP_ABRACANDALABRA = {
+  id: 10782,
+  name: "Abracandalabra",
+  type: "Off-hand item",
+  effect: "Spell Dmg +100%, MP Regen 5-10, MP +100%",
+};
+const EQUIP_EXTRA_WIDE_HEAD_CANDLE = {
+  id: 10783,
+  name: "extra-wide head candle",
+  type: "Hat",
+  effect: "Wpn Dmg +100%, HP Regen 10-20, HP +100%",
+};
 
-const PREMIUM_SALSA_CALIENTE = {
-  name: "Salsa Caliente™ candle",
-  type: "Potion (40 adv)",
-  effect: "+30% Items",
-};
-const PREMIUM_NAPALM_IN_THE_MORNING = {
-  name: "Napalm In The Morning™ candle",
-  type: "Potion (40 adv)",
-  effect: "+10 Stats per Fight",
-};
 const PREMIUM_SCENT_OF_A_HUMAN = {
+  id: 10774,
   name: "Scent of a Human™ candle",
   type: "Potion (40 adv)",
   effect: "Add 2 copies of Dude monsters",
 };
-const PREMIUM_SMOLDERING_CLOVER = {
-  name: "Smoldering Clover™ candle",
-  type: "Potion (40 adv)",
-  effect: "+60% Meat Drops",
-};
 const PREMIUM_THE_BEAST_WITHIN = {
+  id: 10775,
   name: "The Beast Within™ candle",
   type: "Potion (40 adv)",
   effect: "Add 2 copies of Beast monsters",
 };
+const PREMIUM_SALSA_CALIENTE = {
+  id: 10776,
+  name: "Salsa Caliente™ candle",
+  type: "Potion (40 adv)",
+  effect: "+30% Items",
+};
+const PREMIUM_SMOLDERING_CLOVER = {
+  id: 10777,
+  name: "Smoldering Clover™ candle",
+  type: "Potion (40 adv)",
+  effect: "+60% Meat Drops",
+};
+const PREMIUM_NAPALM_IN_THE_MORNING = {
+  id: 10778,
+  name: "Napalm In The Morning™ candle",
+  type: "Potion (40 adv)",
+  effect: "+10 Stats per Fight",
+};
 
-const BASIC_RAINBOW_GLITTER_CANDLE = {
-  name: "rainbow glitter candle",
-  type: "Potion (80 adv)",
-  effect: "So-So Resistance to All Elements",
-};
-const BASIC_EAR_CANDLE = {
-  name: "ear candle",
-  type: "Potion (80 adv)",
-  effect: "+100% Combat Initiative",
-};
-const BASIC_BANANA_CANDLE = {
-  name: "banana candle",
-  type: "Potion (80 adv)",
-  effect: "Causes monster attacks to miss often",
-};
 const BASIC_NATURAL_MAGICK_CANDLE = {
+  id: 10784,
   name: "natural magick candle",
   type: "Potion (80 adv)",
   effect: "Skill MP Cost -3",
 };
+const BASIC_RAINBOW_GLITTER_CANDLE = {
+  id: 10785,
+  name: "rainbow glitter candle",
+  type: "Potion (80 adv)",
+  effect: "So-So Resistance to All Elements",
+};
+const BASIC_BANANA_CANDLE = {
+  id: 10786,
+  name: "banana candle",
+  type: "Potion (80 adv)",
+  effect: "Causes monster attacks to miss often",
+};
+const BASIC_EAR_CANDLE = {
+  id: 10787,
+  name: "ear candle",
+  type: "Potion (80 adv)",
+  effect: "+100% Combat Initiative",
+};
 const BASIC_VOTIVE_OF_CONFIDENCE = {
+  id: 10788,
   name: "votive of confidence",
   type: "Potion (80 adv)",
   effect: "Muscle/Mysticality/Moxie +50%",
