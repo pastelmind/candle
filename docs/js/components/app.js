@@ -1,10 +1,10 @@
+import { computeSeed } from "../candles.js";
+import { loadCandleSeedData } from "../data.js";
+import { KOL_CLASSES } from "../kol-class.js";
+import { getValidClassesForPath, KOL_PATHS } from "../kol-path.js";
 import { CandleInfo } from "./CandleInfo.js";
-import { computeSeed } from "./candles.js";
-import { loadCandleSeedData } from "./data.js";
-import { KOL_CLASSES } from "./kol-class.js";
-import { getValidClassesForPath, KOL_PATHS } from "./kol-path.js";
 
-/** @typedef {import("./kol-path.js").KolPathInfo} KolPathInfo */
+/** @typedef {import("../kol-path.js").KolPathInfo} KolPathInfo */
 
 const KOL_PATH_GROUPS = KOL_PATHS.reduce((grouped, kolPathInfo) => {
   const groupKey = kolPathInfo.year ?? "default";

@@ -1,4 +1,4 @@
-/** @typedef {import("./candles.js").CandleData} CandleData */
+/** @typedef {import("../candles.js").CandleData} CandleData */
 
 // @ts-ignore Allow using Vue as UMD module
 export const CandleInfo = Vue.extend({
