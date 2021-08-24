@@ -3,8 +3,13 @@
     "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ES2020",
+    "moduleResolution": "node",
     "strict": true,
     "target": "ESNext",
-    "types": ["vue/types/umd"]
+    "paths": {
+      "https://unpkg.com/vue@next/dist/vue.esm-browser.js": [
+        "./node_modules/vue"
+      ]
+    }
   }
 }

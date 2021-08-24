@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="./style.css" />
     <title>KoL Candle Eudora Table</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="module" defer src="./js/components/App.js"></script>
   </head>
   <body>
@@ -53,15 +52,13 @@
             >
               {{ kolPath.name }}
             </option>
-            <optgroup
-              v-for="(kolPathGroup, groupName) in kolPathGroups"
-              v-if="groupName !== 'default'"
-              :label="groupName"
-            >
-              <option v-for="kolPath in kolPathGroup" :value="kolPath.id">
-                {{ kolPath.name }}
-              </option>
-            </optgroup>
+            <template v-for="(kolPathGroup, groupName) in kolPathGroups">
+              <optgroup v-if="groupName !== 'default'" :label="groupName">
+                <option v-for="kolPath in kolPathGroup" :value="kolPath.id">
+                  {{ kolPath.name }}
+                </option>
+              </optgroup>
+            </template>
           </select>
 
           <label for="kol-class">Class: </label>
