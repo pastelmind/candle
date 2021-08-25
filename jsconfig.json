@@ -9,6 +9,9 @@
     "paths": {
       "https://unpkg.com/vue@next/dist/vue.esm-browser.js": [
         "./node_modules/vue"
+      ],
+      "https://unpkg.com/vue@next/dist/vue.esm-browser.prod.js": [
+        "./node_modules/vue"
       ]
     }
   }
