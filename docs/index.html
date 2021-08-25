@@ -55,43 +55,41 @@
     <main id="app"></main>
 
     <template id="app-template">
-      <main>
-        <section class="kol-inputgroup">
-          <label for="kol-path">Path: </label>
-          <select
-            id="kol-path"
-            :value="selectedKolPath"
-            @change="handleKolPathChange($event.target.value)"
+      <section class="kol-inputgroup">
+        <label for="kol-path">Path: </label>
+        <select
+          id="kol-path"
+          :value="selectedKolPath"
+          @change="handleKolPathChange($event.target.value)"
+        >
+          <option
+            v-for="kolPath in kolPathGroups['default']"
+            :value="kolPath.id"
           >
-            <option
-              v-for="kolPath in kolPathGroups['default']"
-              :value="kolPath.id"
-            >
-              {{ kolPath.name }}
-            </option>
-            <template v-for="(kolPathGroup, groupName) in kolPathGroups">
-              <optgroup v-if="groupName !== 'default'" :label="groupName">
-                <option v-for="kolPath in kolPathGroup" :value="kolPath.id">
-                  {{ kolPath.name }}
-                </option>
-              </optgroup>
-            </template>
-          </select>
+            {{ kolPath.name }}
+          </option>
+          <template v-for="(kolPathGroup, groupName) in kolPathGroups">
+            <optgroup v-if="groupName !== 'default'" :label="groupName">
+              <option v-for="kolPath in kolPathGroup" :value="kolPath.id">
+                {{ kolPath.name }}
+              </option>
+            </optgroup>
+          </template>
+        </select>
 
-          <label for="kol-class">Class: </label>
-          <select
-            id="kol-class"
-            :value="selectedKolClass"
-            @change="handleKolClassChange($event.target.value)"
-          >
-            <option v-for="kolClass in kolClasses" :value="kolClass.id">
-              {{ kolClass.name }}
-            </option>
-          </select>
-        </section>
+        <label for="kol-class">Class: </label>
+        <select
+          id="kol-class"
+          :value="selectedKolClass"
+          @change="handleKolClassChange($event.target.value)"
+        >
+          <option v-for="kolClass in kolClasses" :value="kolClass.id">
+            {{ kolClass.name }}
+          </option>
+        </select>
+      </section>
 
-        <table-candle :rows="candleRows"></table-candle>
-      </main>
+      <table-candle :rows="candleRows"></table-candle>
     </template>
 
     <template id="table-candle-template">
