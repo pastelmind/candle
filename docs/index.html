@@ -73,48 +73,52 @@
           </select>
         </section>
 
-        <section class="table-candle">
-          <div class="table-candle__header-cell table-candle__column-day">
-            Day
-          </div>
-          <div class="table-candle__header-cell table-candle__column-equip">
-            Equipment
-          </div>
-          <div class="table-candle__header-cell table-candle__column-premium">
-            Premium
-          </div>
-          <div class="table-candle__header-cell table-candle__column-basic">
-            Basic 1
-          </div>
-          <div class="table-candle__header-cell table-candle__column-basic">
-            Basic 2
-          </div>
-          <div class="table-candle__header-cell table-candle__column-seed">
-            Seed
-          </div>
-
-          <template v-for="candleData in candlesByDate">
-            <div class="table-candle__cell table-candle__column-day">
-              {{ candleData.day }}
-            </div>
-            <div class="table-candle__cell table-candle__column-equip">
-              <candle-info :candle="candleData.equipment" />
-            </div>
-            <div class="table-candle__cell table-candle__column-premium">
-              <candle-info :candle="candleData.premium" />
-            </div>
-            <div class="table-candle__cell table-candle__column-basic">
-              <candle-info :candle="candleData.basic1" />
-            </div>
-            <div class="table-candle__cell table-candle__column-basic">
-              <candle-info :candle="candleData.basic2" />
-            </div>
-            <div class="table-candle__cell table-candle__column-seed">
-              {{ candleData.seed }}
-            </div>
-          </template>
-        </section>
+        <table-candle :rows="candleRows"></table-candle>
       </main>
+    </template>
+
+    <template id="table-candle-template">
+      <section class="table-candle">
+        <div class="table-candle__header-cell table-candle__column-day">
+          Day
+        </div>
+        <div class="table-candle__header-cell table-candle__column-equip">
+          Equipment
+        </div>
+        <div class="table-candle__header-cell table-candle__column-premium">
+          Premium
+        </div>
+        <div class="table-candle__header-cell table-candle__column-basic">
+          Basic 1
+        </div>
+        <div class="table-candle__header-cell table-candle__column-basic">
+          Basic 2
+        </div>
+        <div class="table-candle__header-cell table-candle__column-seed">
+          Seed
+        </div>
+
+        <template v-for="row in rows">
+          <div class="table-candle__cell table-candle__column-day">
+            {{ row.day }}
+          </div>
+          <div class="table-candle__cell table-candle__column-equip">
+            <candle-info :candle="row.candles?.equipment" />
+          </div>
+          <div class="table-candle__cell table-candle__column-premium">
+            <candle-info :candle="row.candles?.premium" />
+          </div>
+          <div class="table-candle__cell table-candle__column-basic">
+            <candle-info :candle="row.candles?.basic1" />
+          </div>
+          <div class="table-candle__cell table-candle__column-basic">
+            <candle-info :candle="row.candles?.basic2" />
+          </div>
+          <div class="table-candle__cell table-candle__column-seed">
+            {{ row.seed }}
+          </div>
+        </template>
+      </section>
     </template>
 
     <template id="candle-info-template">

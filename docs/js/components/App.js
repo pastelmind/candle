@@ -1,11 +1,12 @@
 import { computeSeed } from "../candles.js";
 import { loadCandleSeedData } from "../data.js";
-import { computed, createApp, defineComponent, ref } from "../vue.js";
 import { KOL_CLASSES } from "../kol-class.js";
 import { getValidClassesForPath, KOL_PATHS } from "../kol-path.js";
-import { CandleInfo } from "./CandleInfo.js";
+import { computed, createApp, defineComponent, ref } from "../vue.js";
+import { TableCandle } from "./TableCandle.js";
 
 /** @typedef {import("../data.js").CandlePackage} CandlePackage */
+/** @typedef {import("./TableCandle.js").CandleRow} CandleRow */
 /** @typedef {Record<number, Readonly<CandlePackage>>} CandleSeedData */
 /** @typedef {import("../kol-path.js").KolPathInfo} KolPathInfo */
 
@@ -20,7 +21,7 @@ const KOL_PATH_GROUPS = KOL_PATHS.reduce((grouped, kolPathInfo) => {
 }, /** @type {Record<number | 'default', KolPathInfo[]>} */ ({}));
 
 const App = defineComponent({
-  components: { CandleInfo },
+  components: { TableCandle },
 
   setup() {
     const selectedKolClass = ref(KOL_CLASSES[0].id);
@@ -75,25 +76,25 @@ const App = defineComponent({
       }
     })();
 
-    const candlesByDate = computed(() => {
+    const candleRows = computed(() => {
       if (!candleSeedData.value) return [];
 
-      /** @type {(CandlePackage & { day: number, seed: number })[]} */
-      const candles = [];
+      /** @type {CandleRow[]} */
+      const candleRows = [];
       for (let day = 1; day <= 30; ++day) {
         const seed = computeSeed(
           selectedKolClass.value,
           selectedKolPath.value,
           day
         );
-        candles.push({ day, seed, ...candleSeedData.value[seed] });
+        candleRows.push({ day, seed, candles: candleSeedData.value[seed] });
       }
 
-      return candles;
+      return candleRows;
     });
 
     return {
-      candlesByDate,
+      candleRows,
       handleKolClassChange,
       handleKolPathChange,
       kolClasses,
