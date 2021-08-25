@@ -4,6 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0" />
 
+    <link rel="modulepreload" href="./js/candles.js" />
+    <link rel="modulepreload" href="./js/components/App.js" />
+    <link rel="modulepreload" href="./js/components/CandleInfo.js" />
+    <link rel="modulepreload" href="./js/components/TableCandle.js" />
+    <link rel="modulepreload" href="./js/data.js" />
+    <link rel="modulepreload" href="./js/kol-class.js" />
+    <link rel="modulepreload" href="./js/kol-path.js" />
+    <link rel="modulepreload" href="./js/vue.js" />
+
+    <!-- When changing this URL, also change the URL in data.js -->
+    <link
+      rel="preload"
+      as="fetch"
+      crossorigin
+      href="https://docs.google.com/spreadsheets/d/e/2PACX-1vReJ-umFgHAztzyOJTQcAnPdiArQ0vNktNNkarh1AxpE3-0wPIoTKUqzCW2JpDD-jFjjkqjZ4PXyszg/pub?gid=742634370&single=true&output=csv"
+    />
+
     <link rel="stylesheet" href="./style.css" />
     <title>KoL Candle Eudora Table</title>
     <script type="module" defer src="./js/components/App.js"></script>

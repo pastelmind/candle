@@ -54,9 +54,7 @@ const BASIC_NUMBER_MAP = new Map(
   ].map((candleData, index) => [index + 1, candleData])
 );
 
-// For local development
-// const DATA_URL = "../spading.csv";
-// For production
+// When changing this URL, also change the preload <link> in index.html!
 const DATA_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vReJ-umFgHAztzyOJTQcAnPdiArQ0vNktNNkarh1AxpE3-0wPIoTKUqzCW2JpDD-jFjjkqjZ4PXyszg/pub?gid=742634370&single=true&output=csv";
 
